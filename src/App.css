@@ -168,11 +168,45 @@
   font-weight: 500;
 }
 
+/* 访问统计 */
+.stats-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+  margin-bottom: 24px;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stats-label {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.stats-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  min-width: 20px;
+}
+
+.stats-divider {
+  color: #d1d5db;
+  font-size: 14px;
+}
+
 /* 页脚 */
 .footer {
   text-align: center;
-  padding: 32px 0;
-  border-top: 1px solid #e5e7eb;
+  padding: 16px 0 0;
 }
 
 .footer p {
@@ -220,6 +254,15 @@
 
   .section-title {
     text-align: center;
+  }
+
+  .stats-section {
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  .stats-value {
+    font-size: 15px;
   }
 }
 

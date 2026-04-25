@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import './App.css'
 
 interface SocialLink {
@@ -43,6 +44,17 @@ const projects: Project[] = [
 ]
 
 function App() {
+  useEffect(() => {
+    const existing = document.getElementById('busuanzi-script')
+    if (!existing) {
+      const script = document.createElement('script')
+      script.id = 'busuanzi-script'
+      script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+      script.async = true
+      document.body.appendChild(script)
+    }
+  }, [])
+
   return (
     <div className="app">
       <main className="container">
@@ -92,6 +104,19 @@ function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* 访问统计 */}
+        <section className="stats-section">
+          <div className="stats-item">
+            <span className="stats-label">总访客</span>
+            <span id="busuanzi_value_site_uv" className="stats-value">...</span>
+          </div>
+          <div className="stats-divider">|</div>
+          <div className="stats-item">
+            <span className="stats-label">总访问量</span>
+            <span id="busuanzi_value_site_pv" className="stats-value">...</span>
           </div>
         </section>
 
